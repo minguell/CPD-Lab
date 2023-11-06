@@ -9,21 +9,19 @@ def shellSort(arr, sequence, sequence_name):
                 j -= gap
             arr[j] = temp
 
-        print("SEQ=" + sequence_name)
-        print(" ".join(map(str, arr)))
-        print("INCR=" + str(gap))
-
+            # Imprima o estado do vetor após cada incremento
+            print("SEQ=" + sequence_name)
+            print(" ".join(map(str, arr)))
+            print("INCR=" + str(gap))
 
 def main():
-    with open("entrada2.txt", "r") as input_file, open(
-        "saida2.txt", "w"
-    ) as output_file:
+    with open("entrada1.txt", "r") as input_file:
         for line in input_file:
             numbers = list(map(int, line.strip().split()))
             n = numbers[0]
             arr = numbers[1:]
 
-            # Sequência SHELL(potências de 2)
+            # Sequência SHELL (potências de 2)
             shell_sequence = [
                 1,
                 2,
@@ -89,9 +87,6 @@ def main():
                 1035711,
             ]
             shellSort(arr, ciura_sequence, "CIURA")
-
-            output_file.write(f"{n} {' '.join(map(str, arr))}\n")
-
 
 if __name__ == "__main__":
     main()
